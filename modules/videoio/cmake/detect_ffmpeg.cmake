@@ -24,6 +24,7 @@ endif()
 
 set(_required_ffmpeg_libraries libavcodec libavformat libavutil libswscale)
 set(_used_ffmpeg_libraries ${_required_ffmpeg_libraries})
+find_package(PkgConfig)
 if(NOT HAVE_FFMPEG AND PKG_CONFIG_FOUND)
   ocv_check_modules(FFMPEG libavcodec libavformat libavutil libswscale)
   if(FFMPEG_FOUND)
